@@ -1,3 +1,19 @@
 1.Business and data Understanding
 2.Data Preparation
+  2.1. Exploratory Data Analysis
+    2.1.1. First Moment Business Decision
+    2.1.2. Second Moment Business Decision
+    2.1.3. Third Moment Business Decision
+    2.1.4. Fourth Moment Business Decision
+    2.1.5. Data Visualization
+  2.2. Data Cleaning
+    2.2.1. Handling Duplicates
+    2.2.2. Outlayer Treatment
+    2.2.3. Dummy variable creation/Feature 
+    2.2.4. Handling missing values
+    2.2.5. Feature Scaling/ Feature Shrinking
+3.Model Building
+4.Evaluation
+5.Deployment
+6.
   

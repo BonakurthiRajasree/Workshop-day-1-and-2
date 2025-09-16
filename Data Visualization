@@ -1,0 +1,26 @@
+# Data Visualization
+
+import pandas as pd 
+import matplotlib.pyplot as plt
+import seaborn as sns
+std_data=pd.read_csv(r"C:\Users\Rajasree\Desktop\Workshop\student_performance .csv")
+
+# Univariant (1. HOSTOGRAM) Used for understanding DATA DISTRIBUTION
+plt.hist(std_data.Age)
+plt.hist(std_data.Attendance)
+plt.hist(std_data.Marks)
+
+# Univariant (2. BOX PLOT) Used for checking weather the OITLAYERS / EXTREAM VALUES are present or not
+plt.boxplot(std_data.Age)
+plt.boxplot(std_data.Attendance)
+plt.boxplot(std_data.Marks)
+
+#Bivariant (1. SCATTER PloT) Used to understand relationship between two columns
+plt.figure(figsize=(10,8))
+plt.scatter(x=std_data.Attendance, y=std_data.Marks, color='red')
+plt.xlabel('Attendance')
+plt.ylabel('Marks')
+plt.title('Correlation between marks and attendance')
+plt.show()
+
+

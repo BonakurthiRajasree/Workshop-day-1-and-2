@@ -1,0 +1,46 @@
+import pandas as pd
+
+std_data=pd.read_csv(r"C:\Users\Rajasree\Desktop\Workshop\student_performance .csv")
+
+std_data.shape
+
+std_data.head(10)
+
+print("MEAN")
+std_data.Age.mean()
+std_data.Attendance.mean()
+std_data.Marks.mean()
+
+print("MEDIAN")
+std_data.Age.median()
+std_data.Attendance.median()
+std_data.Marks.median()
+
+print("MODE")
+std_data.Gender.mode()
+
+print("VARIANCE")
+std_data.Age.var()
+std_data.Attendance.var()
+std_data.Marks.var()
+
+print("STANDARD DEVIATION")
+std_data.Age.std()
+std_data.Attendance.std()
+std_data.Marks.std()
+
+print("RANGE")
+max(std_data.Age)-min(std_data.Age)
+max(std_data.Attendance)-min(std_data.Attendance)
+max(std_data.Marks)-min(std_data.Marks)
+
+print("SKEWNESS")
+std_data.Age.skew()
+std_data.Attendance.skew()
+std_data.Marks.skew()
+
+print("KURTOSIS")
+std_data.Age.kurt()
+std_data.Attendance.kurt()
+std_data.Marks.kurt()
+Save as:CRSP-ML(Q)

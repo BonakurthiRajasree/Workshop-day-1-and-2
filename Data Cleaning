@@ -1,0 +1,70 @@
+#DATA CLEANING
+# STEP:1.HANDLING DUPLICATE
+import pandas as pd
+
+cars_data = pd.read_excel(r"C:\Users\Rajasree\Desktop\Workshop\cars.xlsx")
+cars_data.head()
+
+duplicate=cars_data.duplicated()
+duplicate
+
+total_duplicates=sum(duplicate)
+total_duplicates
+
+data_first=cars_data.drop_duplicates()
+data_first
+
+#STEP: 2. OUTLAYER TREATMENT
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+df = pd.read_excel(r"C:\Users\Rajasree\Desktop\Workshop\cars.xlsx")
+plt.boxplot(df.MSRP)
+
+from feature_engine.outlayers import Winsoriser
+winsor_iqr=Winsoriser(capping_method='iqr',
+                      tail='both',
+                      fold=1.5,
+                      variables=['MSRP'])
+df['MSRP_IQR']=winsor_iqr.fit_transform(df[['MSRP']])
+sns.boxplot(df['MSRP_IQR'])
+
+
+#Step:3. Dummy variable creation/ Feature Encoding
+
+import pandas as pd
+df=pd.read_csv(r"C:\Users\Rajasree\Desktop\Workshop\cars_duplicates.csv")
+
+df.drop(['Make','Model'],axis==1,inplace==True)
+
+df_new=pd.get_dummies(df)
+df_new_1=pd.get_dumies(df,drop_first=True)
+
+#STEP : 4 HANDLING MISSING VALUES
+
+import numpy as np
+import pandas as pd
+
+df=pd.read_excel(r"C:\Users\Rajasree\Desktop\Workshop\cars_null.xlsx")
+df.info()
+
+print(df.isna().sum())
+from sklearn.impute import SimpleImputer
+
+mean_imputer=SimpleImputer(missing_values=np.nan,strategy='Mean')
+df["MPG_City"]=mean_imputer.fit_transform(df[["MPG_City"]])
+df["MPG_City"].isna().sum()
+
+median_imputer=SimpleImputer(missing_values=np.nan,strategy='Median')
+df["MPG_City"]=median_imputer.fit_transform(df[["MPG_City"]])
+df["MPG_City"].isna().sum()
+
+mode_imputer=SimpleImputer(missing_values=np.nan,strategy='Mode')
+df["MPG_City"]=mode_imputer.fit_transform(df[["MPG_City"]])
+df["MPG_City"].isna().sum()
+
+
+
+
